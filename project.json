@@ -1,0 +1,25 @@
+{
+  "overview": "A production-ready, VS Code-inspired web IDE with Monaco Editor, file tree with localStorage persistence, multi-tab editing, syntax highlighting, dark theme, a polished mock chat panel, command palette, and a professional desktop IDE experience.",
+  "features": [
+    "Monaco Editor with syntax highlighting, code folding, minimap, and bracket matching",
+    "File tree with create/rename/delete, file icons by type, and localStorage persistence",
+    "Multi-tab editor with unsaved change indicators and keyboard shortcuts",
+    "VS Code-inspired dark theme with activity bar, status bar, and breadcrumb navigation",
+    "Mock chat panel with typing indicators, message history, and localStorage persistence",
+    "Command palette (Ctrl+Shift+P) and Quick Open (Ctrl+P) with fuzzy search",
+    "Full menu bar: File, Edit, View, Help menus with all standard actions",
+    "Settings panel with font, theme, and editor preferences persisted to localStorage"
+  ],
+  "category": "productivity",
+  "tags": [
+    "ide",
+    "code-editor",
+    "monaco",
+    "vs-code",
+    "productivity",
+    "developer-tools",
+    "dark-theme",
+    "file-manager"
+  ],
+  "last_updated": "2026-04-17T10:18:01.666Z"
+}

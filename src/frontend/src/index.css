@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk", sans-serif;
+    --font-body: "DM Sans", sans-serif;
+    --font-mono: "Geist Mono", monospace;
+    --radius: 0.25rem;
+
+    /* Light mode — bright IDE look */
+    --background: 0.97 0 0;
+    --foreground: 0.13 0 0;
+    --card: 0.99 0 0;
+    --card-foreground: 0.13 0 0;
+    --popover: 1.0 0 0;
+    --popover-foreground: 0.13 0 0;
+
+    --primary: 0.52 0.2 248;
+    --primary-foreground: 0.98 0 0;
+
+    --secondary: 0.93 0 0;
+    --secondary-foreground: 0.2 0 0;
+    --muted: 0.93 0 0;
+    --muted-foreground: 0.45 0 0;
+
+    --accent: 0.52 0.2 248;
+    --accent-foreground: 0.98 0 0;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.85 0 0;
+    --input: 0.85 0 0;
+    --ring: 0.52 0.2 248;
+
+    --chart-1: 0.52 0.2 248;
+    --chart-2: 0.6 0.12 185;
+    --chart-3: 0.4 0.07 227;
+    --chart-4: 0.65 0.18 40;
+    --chart-5: 0.72 0.15 50;
+
+    --sidebar: 0.95 0 0;
+    --sidebar-foreground: 0.13 0 0;
+    --sidebar-primary: 0.52 0.2 248;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.9 0 0;
+    --sidebar-accent-foreground: 0.2 0 0;
+    --sidebar-border: 0.85 0 0;
+    --sidebar-ring: 0.52 0.2 248;
+  }
+
+  .dark {
+    --background: 0.12 0 0;
+    --foreground: 0.92 0 0;
+    --card: 0.145 0 0;
+    --card-foreground: 0.92 0 0;
+    --popover: 0.18 0 0;
+    --popover-foreground: 0.92 0 0;
+
+    --primary: 0.75 0.2 210;
+    --primary-foreground: 0.12 0 0;
+
+    --secondary: 0.18 0 0;
+    --secondary-foreground: 0.82 0 0;
+    --muted: 0.18 0 0;
+    --muted-foreground: 0.5 0 0;
+
+    --accent: 0.68 0.18 145;
+    --accent-foreground: 0.12 0 0;
+
+    --destructive: 0.58 0.19 22;
+    --destructive-foreground: 0.92 0 0;
+
+    --border: 0.25 0 0;
+    --input: 0.25 0 0;
+    --ring: 0.75 0.2 210;
+
+    --chart-1: 0.75 0.2 210;
+    --chart-2: 0.68 0.18 145;
+    --chart-3: 0.55 0.2 25;
+    --chart-4: 0.65 0.18 40;
+    --chart-5: 0.72 0.15 50;
+
+    --sidebar: 0.145 0 0;
+    --sidebar-foreground: 0.92 0 0;
+    --sidebar-primary: 0.75 0.2 210;
+    --sidebar-primary-foreground: 0.145 0 0;
+    --sidebar-accent: 0.18 0 0;
+    --sidebar-accent-foreground: 0.82 0 0;
+    --sidebar-border: 0.22 0 0;
+    --sidebar-ring: 0.75 0.2 210;
+  }
+
+  .high-contrast {
+    --background: 0.0 0 0;
+    --foreground: 1.0 0 0;
+    --card: 0.05 0 0;
+    --card-foreground: 1.0 0 0;
+    --popover: 0.05 0 0;
+    --popover-foreground: 1.0 0 0;
+
+    --primary: 1.0 0.25 210;
+    --primary-foreground: 0.0 0 0;
+
+    --secondary: 0.1 0 0;
+    --secondary-foreground: 1.0 0 0;
+    --muted: 0.1 0 0;
+    --muted-foreground: 0.7 0 0;
+
+    --accent: 0.85 0.22 145;
+    --accent-foreground: 0.0 0 0;
+
+    --border: 0.4 0 0;
+    --input: 0.4 0 0;
+    --ring: 1.0 0.25 210;
+
+    --sidebar: 0.05 0 0;
+    --sidebar-foreground: 1.0 0 0;
+    --sidebar-primary: 1.0 0.25 210;
+    --sidebar-primary-foreground: 0.0 0 0;
+    --sidebar-accent: 0.1 0 0;
+    --sidebar-accent-foreground: 1.0 0 0;
+    --sidebar-border: 0.3 0 0;
+    --sidebar-ring: 1.0 0.25 210;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400 700;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400 700;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400 700;
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Custom scrollbars: VS Code style */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(var(--border)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: oklch(var(--border));
+    border-radius: 2px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: oklch(var(--muted-foreground));
+  }
+
+  /* Activity bar styling */
+  .activity-bar {
+    @apply flex flex-col items-center justify-start gap-1 py-2 px-2;
+  }
+
+  .activity-icon {
+    @apply relative w-10 h-10 flex items-center justify-center rounded-none cursor-pointer transition-smooth;
+  }
+
+  .activity-icon:hover {
+    @apply bg-primary/10;
+  }
+
+  .activity-icon.active {
+    @apply text-primary;
+  }
+
+  .activity-icon.active::before {
+    @apply absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-primary;
+    content: "";
+  }
+
+  /* Status bar styling */
+  .status-bar {
+    @apply flex items-center justify-between px-4 py-1 text-xs;
+  }
+
+  /* Editor tabs */
+  .editor-tab {
+    @apply flex items-center gap-2 px-3 py-2 border-b-2 border-transparent transition-smooth;
+  }
+
+  .editor-tab:hover {
+    @apply bg-muted/30;
+  }
+
+  .editor-tab.active {
+    @apply border-primary text-primary;
+  }
+
+  .editor-tab:not(.active) {
+    @apply text-muted-foreground;
+  }
+
+  /* Breadcrumb styling */
+  .breadcrumb {
+    @apply flex items-center gap-1 text-xs text-muted-foreground;
+  }
+
+  .breadcrumb-item {
+    @apply flex items-center gap-1;
+  }
+
+  .breadcrumb-separator {
+    @apply text-muted-foreground/60 mx-1;
+  }
+
+  /* File tree styling */
+  .file-tree-item {
+    @apply flex items-center gap-2 px-2 py-1 hover:bg-muted/30 transition-smooth rounded-none;
+  }
+
+  .file-tree-item.active {
+    @apply bg-primary/10 text-primary;
+  }
+
+  /* Tight geometry */
+  .rounded-none {
+    border-radius: 0;
+  }
+
+  .rounded-xs {
+    border-radius: 2px;
+  }
+
+  .rounded-sm {
+    border-radius: 4px;
+  }
+}
